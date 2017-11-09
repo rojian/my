@@ -1,4 +1,4 @@
-package pers.weixindemo.util;
+package pers.weixindemo.util.wechat;
 
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.core.util.QuickWriter;
@@ -8,6 +8,7 @@ import com.thoughtworks.xstream.io.xml.XppDriver;
 import org.dom4j.Document;
 import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
+import pers.weixindemo.entity.Article;
 import pers.weixindemo.entity.response.*;
 
 import javax.servlet.http.HttpServletRequest;
@@ -164,7 +165,7 @@ public class WeChatMessageUtil {
      */
     public static String newsMessageToXml(RespNewsMessage newsMessage) {
         xstream.alias("xml", newsMessage.getClass());
-        xstream.alias("item", new RespArticle().getClass());
+        xstream.alias("item", new Article().getClass());
         return xstream.toXML(newsMessage);
     }
 

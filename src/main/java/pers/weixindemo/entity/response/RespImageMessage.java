@@ -1,5 +1,7 @@
 package pers.weixindemo.entity.response;
 
+import pers.weixindemo.entity.Image;
+
 /**
  * ClassName: RespImageMessage
  * @Description: 回复微信图片消息对象
@@ -7,17 +9,17 @@ package pers.weixindemo.entity.response;
  * @date 2017/10/23
  */
 public class RespImageMessage extends RespBaseMessage{
-    //是（表示是否必须）  通过素材管理中的接口上传多媒体文件，得到的id。
-    private String MediaId;
+    //是（表示是否必须）  图片
+    private Image Image;
 
     public RespImageMessage() {
     }
 
-    public String getMediaId() {
-        return MediaId;
+    public Image getImage() {
+        return Image;
     }
 
-    public void setMediaId(String mediaId) {
-        MediaId = mediaId;
+    public void setImage(Image image) {
+        Image = image;
     }
 }

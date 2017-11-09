@@ -1,10 +1,9 @@
 package pers.weixindemo.service.wechatdispatcher;
 
-import pers.weixindemo.entity.response.RespArticle;
-import pers.weixindemo.entity.response.RespImageMessage;
+import pers.weixindemo.entity.Article;
 import pers.weixindemo.entity.response.RespNewsMessage;
 import pers.weixindemo.entity.response.RespTextMessage;
-import pers.weixindemo.util.WeChatMessageUtil;
+import pers.weixindemo.util.wechat.WeChatMessageUtil;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -45,12 +44,12 @@ public class MsgDispatcher {
             newsmsg.setFromUserName(mpid);
             newsmsg.setCreateTime(String.valueOf(new Date().getTime()).substring(0,10));
             newsmsg.setMsgType(WeChatMessageUtil.RESP_MESSAGE_TYPE_NEWS);
-            RespArticle respArticle=new RespArticle();
+            Article respArticle=new Article();
             respArticle.setDescription("微信项目开发结构");
             respArticle.setPicUrl("http://res.cuiyongzhi.com/2016/03/201603086749_6850.png");
             respArticle.setTitle("图文消息");
             respArticle.setUrl("http://www.cuiyongzhi.com");
-            List<RespArticle> newsmsglist=new ArrayList<RespArticle>();
+            List<Article> newsmsglist=new ArrayList<Article>();
             newsmsglist.add(respArticle);
             newsmsg.setArticles(newsmsglist);
             newsmsg.setArticleCount(String.valueOf(newsmsglist.size()));

@@ -1,4 +1,4 @@
-package pers.weixindemo.util;
+package pers.weixindemo.util.wechat;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;

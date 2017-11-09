@@ -1,4 +1,4 @@
-package pers.weixindemo.entity.response;
+package pers.weixindemo.entity;
 
 /**
  * ClassName: RespNewsMessage
@@ -6,7 +6,7 @@ package pers.weixindemo.entity.response;
  * @author JackyRowe
  * @date 2017/10/23
  */
-public class RespArticle {
+public class Article {
     //是  图文消息标题
     private String Title;
     //是	  图文消息描述
@@ -16,7 +16,7 @@ public class RespArticle {
     //是  点击图文消息跳转链接
     private String Url;
 
-    public RespArticle() {
+    public Article() {
     }
 
     public String getTitle() {

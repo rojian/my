@@ -7,7 +7,8 @@
 
   <context-param>
     <param-name>contextConfigLocation</param-name>
-    <param-value>classpath:spring.xml</param-value>
+    <param-value>classpath:spring.xml,classpath:spring-quartz.xml</param-value>
+    <!-- ,classpath:spring-quartz.xml 用于做任务调度 任务定时都可以 -->
   </context-param>
   <listener>
     <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
