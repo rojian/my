@@ -25,7 +25,7 @@ public class EventDispatcher {
             RespImageMessage imgmsg = new RespImageMessage();
             imgmsg.setToUserName(openid);
             imgmsg.setFromUserName(mpid);
-            imgmsg.setCreateTime(String.valueOf(new Date().getTime()).substring(0,10);
+            imgmsg.setCreateTime(String.valueOf(new Date().getTime()).substring(0,10));
             imgmsg.setMsgType(WeChatMessageUtil.RESP_MESSAGE_TYPE_IMAGE);
 
             System.out.println("==============这是关注事件！");
