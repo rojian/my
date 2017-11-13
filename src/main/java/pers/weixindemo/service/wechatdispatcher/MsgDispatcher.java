@@ -21,8 +21,6 @@ public class MsgDispatcher {
         String openid=map.get("FromUserName"); //用户 openid
         String mpid=map.get("ToUserName");   //公众号原始 ID
 
-
-
         if (map.get("MsgType").equals(WeChatMessageUtil.REQ_MESSAGE_TYPE_TEXT)) { // 文本消息
             //普通文本消息
             RespTextMessage txtmsg=new RespTextMessage();
@@ -30,8 +28,16 @@ public class MsgDispatcher {
             txtmsg.setFromUserName(mpid);
             txtmsg.setCreateTime(String.valueOf(new Date().getTime()).substring(0,10));
             txtmsg.setMsgType(WeChatMessageUtil.RESP_MESSAGE_TYPE_TEXT);
-
-            txtmsg.setContent("你好，这里是罗健个人账号！");
+            String content=map.get("Content");   //内容
+            if("1".equals(content)){
+                txtmsg.setContent("你好，你发送的内容是 1！");
+            }else if("2".equals(content)){
+                txtmsg.setContent("你好，你发送的内容是 2！");
+            }else if("3".equals(content)){
+                txtmsg.setContent("你好，你发送的内容是 3！");
+            }else{
+                txtmsg.setContent("你好，这里是罗健开发测试账号！");
+            }
             System.out.println("==============这是文本消息！");
             return WeChatMessageUtil.textMessageToXml(txtmsg);
 
